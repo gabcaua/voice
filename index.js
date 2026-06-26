@@ -866,6 +866,7 @@ class Connection extends EventEmitter {
   }
 
   _sendPacketViaQueue(packet) {
+    return false // temporary: force dgram UDP send path for voiceReceive testing
     if (this._nativeQueueKey === null || !this._nativeQueueManager) {
       return false
     }
